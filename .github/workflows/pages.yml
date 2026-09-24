@@ -1,0 +1,78 @@
+name: Deploy to GitHub Pages
+
+# GitHub 免费静态托管：STATIC_EXPORT=1 导出 out/（middleware 自动忽略，
+# 根路径语言跳转由 app/page.tsx 客户端完成），上传 Pages artifact 后部署。
+# 项目站 basePath 自动取 /<repo>；<owner>.github.io 用户站则为空。
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Quality gates
+        run: |
+          npm run validate -- 'config/locales/*.json' 'config/fixtures/*.json'
+          npm run check:i18n
+          npm run lint
+          npm run typecheck
+          npm run test
+
+      - name: Determine basePath and site origin
+        run: |
+          REPO="${{ github.event.repository.name }}"
+          OWNER="${{ github.repository_owner }}"
+          # NEXT_PUBLIC_SITE_URL 只放源（协议+主机），路径前缀由 NEXT_PUBLIC_BASE_PATH 负责
+          echo "NEXT_PUBLIC_SITE_URL=https://${OWNER}.github.io" >> "$GITHUB_ENV"
+          if [[ "$REPO" == *.github.io ]]; then
+            echo "NEXT_PUBLIC_BASE_PATH=" >> "$GITHUB_ENV"
+          else
+            echo "NEXT_PUBLIC_BASE_PATH=/${REPO}" >> "$GITHUB_ENV"
+          fi
+
+      - name: Build static export
+        env:
+          STATIC_EXPORT: '1'
+        # middleware 在 export 模式下仅被 Next 忽略（警告不报错），
+        # 根路径语言跳转由 app/page.tsx 客户端完成
+        run: npm run build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

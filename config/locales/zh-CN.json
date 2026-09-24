@@ -1,0 +1,154 @@
+{
+  "meta": {
+    "title": "ZnbSys - 下一代 AI Agent 构建平台",
+    "description": "专为企业打造的高性能 AI 代理开发与编排框架，一套 JSON 配置即可生成完整官网。",
+    "keywords": ["AI Agent", "企业官网", "Next.js", "Tailwind CSS"],
+    "favicon": "/favicon.ico",
+    "ogImage": "/og.png",
+    "locale": "zh-CN"
+  },
+  "theme": {
+    "primary": "#2563eb",
+    "secondary": "#7c3aed",
+    "radius": "xl",
+    "font": "sans",
+    "background": "gradient"
+  },
+  "brand": {
+    "name": "ZnbSys",
+    "logoSvg": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M13 2 3 14h9l-1 8 10-12h-9l1-8z'/></svg>",
+    "tagline": "智能代理，驱动未来"
+  },
+  "navbar": {
+    "sticky": true,
+    "links": [
+      { "label": "核心功能", "href": "#features" },
+      { "label": "关于我们", "href": "#about" },
+      { "label": "客户评价", "href": "#testimonials" },
+      { "label": "联系我们", "href": "#contact" }
+    ],
+    "ctaButton": { "text": "立即开始", "href": "#contact" }
+  },
+  "hero": {
+    "badge": "🚀 1.0 版本现已发布",
+    "headline": "构建高吞吐、模块化的企业级 AI Agent 系统",
+    "subheadline": "基于响应式架构设计，只需一套 JSON 配置，几分钟内即可部署定制化 AI 业务流程。",
+    "primaryCta": { "text": "免费试用", "href": "#contact" },
+    "secondaryCta": { "text": "查看文档", "href": "https://github.com/znbsys/znbsys-homepage", "target": "_blank" }
+  },
+  "features": {
+    "title": "为什么选择 ZnbSys",
+    "subtitle": "提供端到端的 Agent 开发、编排与监控支撑",
+    "columns": 3,
+    "items": [
+      {
+        "iconName": "Zap",
+        "title": "极速响应",
+        "description": "优化数据管线，支持毫秒级流式响应与并发调度。"
+      },
+      {
+        "iconName": "Shield",
+        "title": "企业级安全",
+        "description": "内置数据合规防护网与沙箱隔离机制，保障数据隐私。"
+      },
+      {
+        "iconName": "Layers",
+        "title": "模块化编排",
+        "description": "灵活插拔 Tools、Memory 与 LLM 驱动引擎，轻松扩展。"
+      },
+      {
+        "iconName": "GitBranch",
+        "title": "可视化流程",
+        "description": "拖拽式编排 Agent 工作流，实时观测每一步执行链路。"
+      },
+      {
+        "iconName": "BarChart3",
+        "title": "全链路可观测",
+        "description": "内置 Token 消耗、延迟与成功率看板，成本一目了然。"
+      },
+      {
+        "iconName": "Plug",
+        "title": "生态即插即用",
+        "description": "预置 80+ 数据源连接器，10 分钟接入既有业务系统。"
+      }
+    ]
+  },
+  "about": {
+    "title": "重塑企业生产力引擎",
+    "description": [
+      "ZnbSys 致力于降低企业应用人工智能的门槛。",
+      "我们的开源生态与商业化工具链已经帮助全球数百家企业构建了自己的智能化工作流。"
+    ],
+    "stats": [
+      { "label": "企业客户", "value": "500", "suffix": "+" },
+      { "label": "日均 API 调用", "value": "10M", "suffix": "+" },
+      { "label": "开源 Star 数", "value": "12k", "suffix": "+" }
+    ]
+  },
+  "testimonials": {
+    "title": "行业领袖的信赖之选",
+    "subtitle": "来自不同规模团队的真实反馈",
+    "items": [
+      {
+        "quote": "ZnbSys 帮我们将 AI 业务落地时间缩短了 70%，架构清晰度令人惊艳。",
+        "author": "张伟",
+        "role": "CTO",
+        "company": "科技前沿 Co.",
+        "rating": 5
+      },
+      {
+        "quote": "从 POC 到生产环境只用了三周，运维成本远低于自建方案。",
+        "author": "李娜",
+        "role": "技术总监",
+        "company": "云启科技",
+        "rating": 5
+      },
+      {
+        "quote": "沙箱隔离机制让我们敢于把核心数据交给 Agent 处理。",
+        "author": "王强",
+        "role": "架构师",
+        "company": "数智未来",
+        "rating": 4
+      }
+    ]
+  },
+  "contact": {
+    "title": "准备好开启您的 AI 转型了吗？",
+    "subtitle": "留下联系方式，我们的解决方案架构师将在 24 小时内与您取得联系。",
+    "email": "znbsys@outlook.com",
+    "phone": "+86 (021) 8888-9999",
+    "address": "大阪市天王区玉造元町",
+    "socials": [
+      { "platform": "github", "label": "GitHub", "href": "https://github.com/znbsys/znbsys-homepage" },
+      { "platform": "x", "label": "X", "href": "https://x.com/znbsys" },
+      { "platform": "email", "label": "邮件", "href": "mailto:znbsys@outlook.com" }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2026 ZnbSys Inc. 保留所有权利。",
+    "linkGroups": [
+      {
+        "title": "产品",
+        "links": [
+          { "label": "核心功能", "href": "/zh-CN/#features" },
+          { "label": "更新日志", "href": "/zh-CN/changelog/" }
+        ]
+      },
+      {
+        "title": "资源",
+        "links": [
+          { "label": "开发文档", "href": "https://github.com/znbsys/znbsys-homepage" },
+          { "label": "社区", "href": "https://github.com/znbsys/znbsys-homepage" }
+        ]
+      },
+      {
+        "title": "法务",
+        "links": [
+          { "label": "隐私政策", "href": "/zh-CN/privacy/" },
+          { "label": "服务条款", "href": "/zh-CN/terms/" }
+        ]
+      }
+    ]
+  },
+  "order": ["hero", "features", "about", "testimonials", "contact"]
+}

@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "title": "Brand B - Alternate Site",
+    "description": "An alternate brand configuration for testing multi-site switching",
+    "keywords": ["brand-b", "test"],
+    "favicon": "/favicon.ico",
+    "ogImage": "/og-b.png",
+    "locale": "zh-CN"
+  },
+  "theme": {
+    "primary": "#dc2626",
+    "secondary": "#f97316",
+    "radius": "lg",
+    "font": "sans",
+    "background": "solid"
+  },
+  "brand": {
+    "name": "Brand B",
+    "logoSvg": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><circle cx='12' cy='12' r='10'/></svg>",
+    "tagline": "A different brand"
+  },
+  "navbar": {
+    "sticky": true,
+    "links": [
+      { "label": "Features", "href": "#features" },
+      { "label": "Contact", "href": "#contact" }
+    ],
+    "ctaButton": { "text": "Sign Up", "href": "#contact" }
+  },
+  "hero": {
+    "headline": "Welcome to Brand B",
+    "subheadline": "This is the alternate brand site.",
+    "primaryCta": { "text": "Learn More", "href": "#features" }
+  },
+  "features": {
+    "title": "Brand B Features",
+    "subtitle": "What we offer",
+    "columns": 2,
+    "items": [
+      { "iconName": "Rocket", "title": "Speed", "description": "Lightning fast performance." },
+      { "iconName": "Shield", "title": "Security", "description": "Top-notch security." }
+    ]
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "email": "hello@brandb.com",
+    "socials": [
+      { "platform": "github", "label": "GitHub", "href": "https://github.com/brandb" }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2026 Brand B Inc.",
+    "links": [
+      { "label": "Privacy", "href": "#" }
+    ]
+  },
+  "order": ["hero", "features", "contact"]
+}

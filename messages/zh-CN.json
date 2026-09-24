@@ -1,0 +1,19 @@
+{
+  "nav.openMenu": "打开菜单",
+  "nav.closeMenu": "关闭菜单",
+  "nav.primary": "主导航",
+  "hero.badgeFallback": "最新动态",
+  "testimonials.ratingLabel": "评分 {rating} 分，满分 5 分",
+  "testimonials.avatarFallback": "匿名用户",
+  "contact.email": "邮箱",
+  "contact.phone": "电话",
+  "contact.address": "地址",
+  "contact.followUs": "关注我们",
+  "footer.backToTop": "回到顶部",
+  "language.switch": "切换语言",
+  "language.current": "当前语言：{label}",
+  "notFound.title": "页面不存在",
+  "notFound.description": "抱歉，您访问的页面已下线或从未存在。",
+  "notFound.backHome": "返回首页",
+  "icon.missing": "图标缺失"
+}

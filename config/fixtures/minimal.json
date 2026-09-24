@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "title": "Minimal Site",
+    "description": "A minimal site config for testing",
+    "keywords": [],
+    "favicon": "/favicon.ico",
+    "locale": "zh-CN"
+  },
+  "theme": {
+    "primary": "#2563eb",
+    "radius": "xl",
+    "font": "sans",
+    "background": "gradient"
+  },
+  "brand": {
+    "name": "MinimalCo",
+    "tagline": "Less is more"
+  },
+  "navbar": {
+    "links": [
+      { "label": "Features", "href": "#features" }
+    ]
+  },
+  "hero": {
+    "headline": "Minimal Headline",
+    "subheadline": "Minimal subheadline",
+    "primaryCta": { "text": "Get Started", "href": "#contact" }
+  },
+  "features": {
+    "title": "Features",
+    "subtitle": "Our features",
+    "items": [
+      { "iconName": "Zap", "title": "Fast", "description": "Very fast" }
+    ]
+  },
+  "contact": {
+    "title": "Contact Us",
+    "email": "hi@example.com",
+    "socials": []
+  },
+  "footer": {
+    "copyright": "© 2026 MinimalCo",
+    "links": [
+      { "label": "Privacy", "href": "#" }
+    ]
+  }
+}

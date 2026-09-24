@@ -1,0 +1,154 @@
+{
+  "meta": {
+    "title": "ZnbSys - The Next-Generation AI Agent Platform",
+    "description": "A high-performance AI agent development and orchestration framework built for enterprises. One JSON config, one complete website.",
+    "keywords": ["AI Agent", "Corporate Website", "Next.js", "Tailwind CSS"],
+    "favicon": "/favicon.ico",
+    "ogImage": "/og.png",
+    "locale": "en"
+  },
+  "theme": {
+    "primary": "#2563eb",
+    "secondary": "#7c3aed",
+    "radius": "xl",
+    "font": "sans",
+    "background": "gradient"
+  },
+  "brand": {
+    "name": "ZnbSys",
+    "logoSvg": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M13 2 3 14h9l-1 8 10-12h-9l1-8z'/></svg>",
+    "tagline": "Intelligent Agents, Powering Tomorrow"
+  },
+  "navbar": {
+    "sticky": true,
+    "links": [
+      { "label": "Features", "href": "#features" },
+      { "label": "About", "href": "#about" },
+      { "label": "Testimonials", "href": "#testimonials" },
+      { "label": "Contact", "href": "#contact" }
+    ],
+    "ctaButton": { "text": "Get Started", "href": "#contact" }
+  },
+  "hero": {
+    "badge": "🚀 Version 1.0 is now available",
+    "headline": "Build High-Throughput, Modular Enterprise AI Agent Systems",
+    "subheadline": "Designed on a reactive architecture. With a single JSON config, deploy a customised AI business workflow in minutes.",
+    "primaryCta": { "text": "Start Free Trial", "href": "#contact" },
+    "secondaryCta": { "text": "Read the Docs", "href": "https://github.com/znbsys/znbsys-homepage", "target": "_blank" }
+  },
+  "features": {
+    "title": "Why Choose ZnbSys",
+    "subtitle": "End-to-end support for agent development, orchestration and monitoring",
+    "columns": 3,
+    "items": [
+      {
+        "iconName": "Zap",
+        "title": "Blazing Fast",
+        "description": "Optimised data pipelines delivering millisecond streaming responses and concurrent scheduling."
+      },
+      {
+        "iconName": "Shield",
+        "title": "Enterprise Security",
+        "description": "Built-in compliance guardrails and sandbox isolation to keep your data private."
+      },
+      {
+        "iconName": "Layers",
+        "title": "Modular Orchestration",
+        "description": "Plug in Tools, Memory and LLM drivers flexibly, and extend with ease."
+      },
+      {
+        "iconName": "GitBranch",
+        "title": "Visual Workflows",
+        "description": "Drag-and-drop agent workflows with real-time visibility into every execution step."
+      },
+      {
+        "iconName": "BarChart3",
+        "title": "Full Observability",
+        "description": "Built-in dashboards for token spend, latency and success rate — cost at a glance."
+      },
+      {
+        "iconName": "Plug",
+        "title": "Plug-and-Play Ecosystem",
+        "description": "80+ prebuilt data source connectors; integrate with existing systems in 10 minutes."
+      }
+    ]
+  },
+  "about": {
+    "title": "Rebuilding the Enterprise Productivity Engine",
+    "description": [
+      "ZnbSys lowers the barrier for enterprises adopting artificial intelligence.",
+      "Our open-source ecosystem and commercial toolchain have already helped hundreds of companies worldwide build their own intelligent workflows."
+    ],
+    "stats": [
+      { "label": "Enterprise Customers", "value": "500", "suffix": "+" },
+      { "label": "Daily API Calls", "value": "10M", "suffix": "+" },
+      { "label": "Open Source Stars", "value": "12k", "suffix": "+" }
+    ]
+  },
+  "testimonials": {
+    "title": "Trusted by Industry Leaders",
+    "subtitle": "Real feedback from teams of every size",
+    "items": [
+      {
+        "quote": "ZnbSys cut our AI delivery time by 70%. The architectural clarity is remarkable.",
+        "author": "Wei Zhang",
+        "role": "CTO",
+        "company": "Tech Frontier Co.",
+        "rating": 5
+      },
+      {
+        "quote": "From POC to production took just three weeks, and ops cost far less than building it ourselves.",
+        "author": "Na Li",
+        "role": "Technical Director",
+        "company": "Yunqi Technology",
+        "rating": 5
+      },
+      {
+        "quote": "The sandbox isolation gives us the confidence to hand core data to agents.",
+        "author": "Qiang Wang",
+        "role": "Architect",
+        "company": "Data Intelligence Future",
+        "rating": 4
+      }
+    ]
+  },
+  "contact": {
+    "title": "Ready to Start Your AI Transformation?",
+    "subtitle": "Leave your details and a solution architect will reach out within 24 hours.",
+    "email": "znbsys@outlook.com",
+    "phone": "+86 (021) 8888-9999",
+    "address": "Motomachi Tamatsukuri, Tennoji Ward, Osaka City",
+    "socials": [
+      { "platform": "github", "label": "GitHub", "href": "https://github.com/znbsys/znbsys-homepage" },
+      { "platform": "x", "label": "X", "href": "https://x.com/znbsys" },
+      { "platform": "email", "label": "Email", "href": "mailto:znbsys@outlook.com" }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2026 ZnbSys Inc. All rights reserved.",
+    "linkGroups": [
+      {
+        "title": "Product",
+        "links": [
+          { "label": "Features", "href": "/en/#features" },
+          { "label": "Changelog", "href": "/en/changelog/" }
+        ]
+      },
+      {
+        "title": "Resources",
+        "links": [
+          { "label": "Documentation", "href": "https://github.com/znbsys/znbsys-homepage" },
+          { "label": "Community", "href": "https://github.com/znbsys/znbsys-homepage" }
+        ]
+      },
+      {
+        "title": "Legal",
+        "links": [
+          { "label": "Privacy Policy", "href": "/en/privacy/" },
+          { "label": "Terms of Service", "href": "/en/terms/" }
+        ]
+      }
+    ]
+  },
+  "order": ["hero", "features", "about", "testimonials", "contact"]
+}

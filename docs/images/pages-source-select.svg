@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="460" viewBox="0 0 880 460" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">
+  <rect width="880" height="460" fill="#ffffff"/>
+  <text x="32" y="48" font-size="24" fill="#24292f">GitHub Pages</text>
+  <text x="32" y="88" font-size="15" font-weight="600" fill="#24292f">Build and deployment</text>
+  <text x="32" y="124" font-size="14" fill="#57606a">Source</text>
+  <!-- dropdown opened -->
+  <rect x="140" y="104" width="420" height="40" rx="6" fill="#ffffff" stroke="#0969da" stroke-width="2"/>
+  <text x="156" y="130" font-size="15" fill="#24292f">GitHub Actions</text>
+  <path d="M530 120 l10 10 10-10" fill="none" stroke="#57606a" stroke-width="2"/>
+  <rect x="140" y="150" width="420" height="160" rx="6" fill="#ffffff" stroke="#d0d7de" filter="drop-shadow(0 4px 8px rgba(140,149,159,0.2))"/>
+  <!-- option 1 selected -->
+  <rect x="148" y="158" width="404" height="64" rx="6" fill="#ddf4ff"/>
+  <circle cx="176" cy="190" r="9" fill="#0969da"/>
+  <circle cx="176" cy="190" r="4" fill="#ffffff"/>
+  <text x="200" y="184" font-size="15" font-weight="600" fill="#24292f">GitHub Actions</text>
+  <text x="200" y="206" font-size="13" fill="#57606a">Build and deploy your site with GitHub Actions（选这个）</text>
+  <!-- option 2 -->
+  <rect x="148" y="230" width="404" height="70" rx="6" fill="#ffffff"/>
+  <circle cx="176" cy="265" r="9" fill="#ffffff" stroke="#8c959f" stroke-width="2"/>
+  <text x="200" y="258" font-size="15" fill="#24292f">Deploy from a branch</text>
+  <text x="200" y="280" font-size="13" fill="#57606a">Your site will be published from a branch —— 本项目不要选这个</text>
+  <!-- callouts -->
+  <rect x="600" y="104" width="250" height="120" rx="8" fill="#fff8c5" stroke="#d4a72c"/>
+  <text x="616" y="134" font-size="14" font-weight="700" fill="#7d4e00">② 修改 Source</text>
+  <text x="616" y="160" font-size="13" fill="#7d4e00">打开下拉框，选择</text>
+  <text x="616" y="180" font-size="13" font-weight="700" fill="#7d4e00">GitHub Actions</text>
+  <text x="616" y="204" font-size="13" fill="#7d4e00">无需点额外保存，自动生效</text>
+  <!-- wrong example -->
+  <rect x="600" y="250" width="250" height="110" rx="8" fill="#ffebe9" stroke="#cf222e"/>
+  <text x="616" y="280" font-size="14" font-weight="700" fill="#a40e26">✗ 错误示例</text>
+  <text x="616" y="306" font-size="13" fill="#a40e26">保持 “Deploy from a branch”</text>
+  <text x="616" y="330" font-size="13" fill="#a40e26">→ deploy job 失败 / 线上不更新</text>
+  <!-- footer note -->
+  <rect x="32" y="340" width="528" height="72" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+  <text x="52" y="372" font-size="13" fill="#24292f">保存后：Actions → “Deploy to GitHub Pages” → Run workflow，</text>
+  <text x="52" y="396" font-size="13" fill="#24292f">或再 push 一次 main，即可完成首次发布。</text>
+</svg>

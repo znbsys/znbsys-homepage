@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="480" viewBox="0 0 880 480" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">
+  <rect width="880" height="480" fill="#ffffff"/>
+  <!-- step 1: repo visibility badge -->
+  <rect x="32" y="24" width="816" height="120" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+  <text x="56" y="56" font-size="14" font-weight="700" fill="#24292f">③ 确认仓库为 Public（免费账号必须）</text>
+  <text x="56" y="88" font-size="14" fill="#57606a">仓库首页标题旁：</text>
+  <rect x="200" y="70" width="88" height="28" rx="14" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="218" y="89" font-size="13" font-weight="600" fill="#24292f">Public</text>
+  <text x="304" y="89" font-size="13" fill="#1a7f37" font-weight="600">✓ 可以发布 Pages</text>
+  <rect x="460" y="70" width="96" height="28" rx="14" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="476" y="89" font-size="13" font-weight="600" fill="#24292f">Private</text>
+  <text x="572" y="89" font-size="13" fill="#cf222e" font-weight="600">✗ 免费套餐不可发布</text>
+  <text x="56" y="124" font-size="13" fill="#57606a">若是 Private，请到 Settings → General → Danger Zone → Change visibility 改为 Public。</text>
+
+  <!-- step 2: general danger zone -->
+  <rect x="32" y="164" width="400" height="280" rx="8" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="56" y="196" font-size="14" font-weight="700" fill="#24292f">Settings → General</text>
+  <text x="56" y="228" font-size="13" fill="#57606a">左侧菜单</text>
+  <rect x="48" y="244" width="360" height="30" rx="6" fill="#ddf4ff"/>
+  <text x="64" y="264" font-size="14" fill="#0969da" font-weight="600">General</text>
+  <text x="64" y="300" font-size="14" fill="#24292f">Access / Moderation / …</text>
+  <text x="64" y="336" font-size="14" fill="#24292f">Code and automation</text>
+  <text x="64" y="372" font-size="14" fill="#24292f">…</text>
+  <line x1="56" y1="396" x2="408" y2="396" stroke="#d0d7de"/>
+  <text x="56" y="424" font-size="13" font-weight="700" fill="#cf222e">滚动到页面最底部</text>
+
+  <!-- step 3: danger zone -->
+  <rect x="456" y="164" width="392" height="280" rx="8" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="480" y="196" font-size="14" font-weight="700" fill="#cf222e">Danger Zone</text>
+  <rect x="476" y="216" width="352" height="88" rx="6" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="492" y="244" font-size="13" font-weight="600" fill="#24292f">Change repository visibility</text>
+  <text x="492" y="268" font-size="12" fill="#57606a">Make this repository public / private</text>
+  <rect x="492" y="278" width="150" height="26" rx="6" fill="#f6f8fa" stroke="#d0d7de"/>
+  <text x="504" y="296" font-size="12" fill="#24292f">Change visibility…</text>
+
+  <rect x="476" y="320" width="352" height="100" rx="6" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="492" y="348" font-size="13" font-weight="600" fill="#24292f">确认对话框</text>
+  <text x="492" y="374" font-size="12" fill="#57606a">会要求输入 仓库名 + 用户名 确认</text>
+  <rect x="492" y="386" width="120" height="24" rx="6" fill="#1f883d"/>
+  <text x="508" y="403" font-size="12" fill="#ffffff" font-weight="600">I understand</text>
+</svg>

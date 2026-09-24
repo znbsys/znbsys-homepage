@@ -1,0 +1,19 @@
+{
+  "nav.openMenu": "メニューを開く",
+  "nav.closeMenu": "メニューを閉じる",
+  "nav.primary": "メインナビゲーション",
+  "hero.badgeFallback": "最新情報",
+  "testimonials.ratingLabel": "5 点満点中 {rating} 点",
+  "testimonials.avatarFallback": "匿名ユーザー",
+  "contact.email": "メール",
+  "contact.phone": "電話",
+  "contact.address": "住所",
+  "contact.followUs": "フォローする",
+  "footer.backToTop": "トップへ戻る",
+  "language.switch": "言語を切り替える",
+  "language.current": "現在の言語：{label}",
+  "notFound.title": "ページが見つかりません",
+  "notFound.description": "申し訳ありませんが、お探しのページは削除されたか、最初から存在しません。",
+  "notFound.backHome": "ホームへ戻る",
+  "icon.missing": "アイコンがありません"
+}

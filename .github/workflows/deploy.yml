@@ -1,0 +1,159 @@
+name: Deploy to Server
+
+# 参考 DEPLOY_GUIDE.md「方式 A：GitHub Actions 自动部署」
+# 适配本工程：CI 构建 Next.js standalone 产物 → SCP 上传 → SSH 解压重启（Nginx 反代 3000 端口）
+#
+# 所需 Secrets（Settings → Secrets and variables → Actions）：
+#   SERVER_HOST      服务器公网 IP
+#   SERVER_USER      SSH 用户名
+#   SSH_PRIVATE_KEY  SSH 私钥内容
+#   SERVER_PORT      可选，SSH 端口，默认 22
+#
+# 可选 Repository variable：
+#   NEXT_PUBLIC_SITE_URL     生产站点源（如 https://example.com），用于 SEO alternates
+#   ENABLE_SERVER_DEPLOY     设为 "true" 才启用本工作流（未设置时 push 只走 GitHub Pages）
+#
+# 服务器一次性准备（见 README「部署」）：
+#   sudo mkdir -p /opt/znbsys-homepage && sudo chown -R $USER:$USER /opt/znbsys-homepage
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+env:
+  DEPLOY_DIR: /opt/znbsys-homepage
+  APP_PORT: '3000'
+
+jobs:
+  build:
+    # 默认关闭：需在 Settings → Variables 设置 ENABLE_SERVER_DEPLOY=true 才部署自有服务器
+    if: ${{ vars.ENABLE_SERVER_DEPLOY == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Quality gates
+        run: |
+          npm run validate -- 'config/locales/*.json' 'config/fixtures/*.json'
+          npm run check:i18n
+          npm run lint
+          npm run typecheck
+          npm run test
+
+      - name: Build
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
+
+      - name: Package standalone release
+        run: |
+          # standalone 运行时需要手动拷入静态资源
+          cp -R .next/static .next/standalone/.next/static
+          if [ -d public ]; then
+            cp -R public .next/standalone/public
+          fi
+          tar -czf release.tar.gz -C .next/standalone .
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-${{ github.sha }}
+          path: release.tar.gz
+          retention-days: 7
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: release-${{ github.sha }}
+
+      - name: Prepare deploy directory
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SERVER_PORT || 22 }}
+          script: mkdir -p ${{ env.DEPLOY_DIR }}
+
+      - name: Upload release
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SERVER_PORT || 22 }}
+          source: release.tar.gz
+          target: ${{ env.DEPLOY_DIR }}
+
+      - name: Deploy and restart
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SERVER_PORT || 22 }}
+          script: |
+            set -e
+            cd "${{ env.DEPLOY_DIR }}"
+
+            echo "==> 停止旧服务"
+            if [ -f .server.pid ]; then
+              OLD_PID=$(cat .server.pid)
+              kill "$OLD_PID" 2>/dev/null || true
+              rm -f .server.pid
+            fi
+            if command -v lsof >/dev/null 2>&1; then
+              PORT_PIDS=$(lsof -ti:${{ env.APP_PORT }} 2>/dev/null || true)
+              if [ -n "$PORT_PIDS" ]; then
+                echo "$PORT_PIDS" | xargs -r kill -9 2>/dev/null || true
+              fi
+            fi
+
+            echo "==> 解压新版本（保留 previous 以便回滚）"
+            rm -rf previous current.new
+            if [ -d current ]; then
+              mv current previous
+            fi
+            mkdir current.new
+            tar -xzf release.tar.gz -C current.new
+            mv current.new current
+
+            echo "==> 启动服务"
+            cd current
+            nohup env PORT=${{ env.APP_PORT }} HOSTNAME=0.0.0.0 \
+              node server.js > ../server.log 2>&1 &
+            echo $! > ../.server.pid
+            sleep 3
+
+            echo "==> 健康检查"
+            curl -fsS -o /dev/null "http://127.0.0.1:${{ env.APP_PORT }}/admin"
+            echo "✓ 服务已在 ${{ env.APP_PORT }} 端口就绪"
+            echo "  日志: ${{ env.DEPLOY_DIR }}/server.log"
+            echo "  回滚: cd ${{ env.DEPLOY_DIR }} && rm -rf current.new && mv previous current && cd current && nohup node server.js > ../server.log 2>&1 &"
+
+      - name: Public health check
+        continue-on-error: true
+        run: |
+          # 依赖 Nginx 反代到 3000 端口（见 README「部署」），未配置时仅告警不阻断
+          curl -fsS --retry 3 --retry-delay 2 \
+            -o /dev/null -w "HTTP %{http_code}\n" \
+            "http://${{ secrets.SERVER_HOST }}/admin"

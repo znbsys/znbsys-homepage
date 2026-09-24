@@ -1,0 +1,242 @@
+{
+  "labels": {
+    "updatedAt": "Last updated",
+    "toc": "On this page",
+    "releasesHeading": "Releases",
+    "currentRelease": "Now available"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "description": "ZnbSys Privacy Policy: how we collect, use, store, and protect information when you use this site and our services.",
+    "updatedAt": "2026-09-24",
+    "intro": "This Privacy Policy applies to your visits to the ZnbSys official website and your use of related products and services. We process personal information in accordance with applicable law and take reasonable steps to keep your data secure.",
+    "sections": [
+      {
+        "heading": "1. Information We Collect",
+        "paragraphs": [
+          "To provide our services and improve your experience, we may collect the following categories of information when you submit it voluntarily or use the services:",
+          "If you contact us via forms, email, or social channels, we also store the content you provide so we can respond and follow up."
+        ],
+        "items": [
+          "Identity and contact details: such as name, email address, phone number, and company name (only when you provide them);",
+          "Usage information: aggregated statistics such as visit times, pages viewed, referrers, browser and device types;",
+          "Technical information: such as IP address, cookie identifiers, and local storage values used for security and preferences;",
+          "Log information: server logs generated automatically to keep the service stable and to troubleshoot issues."
+        ]
+      },
+      {
+        "heading": "2. How We Use Information",
+        "paragraphs": [
+          "We use collected information only for the purposes below and only to the minimum extent necessary:",
+          "We do not sell your personal information to third parties and do not use it for automated decision-making unrelated to these purposes."
+        ],
+        "items": [
+          "Provide, maintain, and improve the website and product services;",
+          "Respond to your inquiries, requests, and feedback;",
+          "Protect accounts and systems, and prevent fraud, abuse, and attacks;",
+          "Analyze product usage to improve features and user experience;",
+          "Send service notices and marketing messages where you have consented or where law permits."
+        ]
+      },
+      {
+        "heading": "3. Cookies and Local Storage",
+        "paragraphs": [
+          "This site uses cookies and browser localStorage for essential functions, such as remembering your language preference (NEXT_LOCALE) and storing admin theme color and light/dark mode choices.",
+          "You can delete or block cookies in your browser settings. Please note that disabling essential cookies may break features such as language switching and theme memory."
+        ]
+      },
+      {
+        "heading": "4. Sharing and Disclosure",
+        "paragraphs": [
+          "We share personal information only in the following cases and require recipients to honor equivalent confidentiality and security obligations:",
+          "If personal information must be transferred due to a merger, acquisition, or asset sale, we will require the new holder to remain bound by this policy or notify you in advance."
+        ],
+        "items": [
+          "With your explicit consent or authorization;",
+          "With trusted service providers needed to deliver the service (e.g., hosting, log analytics), under data-protection terms;",
+          "When required by law, regulation, or judicial or administrative proceedings;",
+          "When necessary to protect the lawful rights and interests of us, users, or the public."
+        ]
+      },
+      {
+        "heading": "5. Data Storage and Security",
+        "paragraphs": [
+          "We apply technical and organizational measures appropriate to the business (such as encryption in transit, access control, and least-privilege access) to protect personal information against unauthorized access, alteration, disclosure, or destruction.",
+          "Personal information is retained only as long as needed for the processing purposes. Where law provides otherwise, the law prevails. When the period ends, we delete or anonymize the data."
+        ]
+      },
+      {
+        "heading": "6. Your Rights",
+        "paragraphs": [
+          "To the extent permitted by applicable law, you have the following rights regarding your personal information:",
+          "To exercise these rights, contact us using the details at the end of this policy. We may need to verify your identity for security."
+        ],
+        "items": [
+          "Access and copy your personal information;",
+          "Correct or complete inaccurate or incomplete data;",
+          "Delete data that is no longer necessary or that you withdraw consent for;",
+          "Withdraw consent or request restriction of processing;",
+          "Receive a portable copy of your data;",
+          "Lodge a complaint about our information practices."
+        ]
+      },
+      {
+        "heading": "7. Third-Party Services and Links",
+        "paragraphs": [
+          "This site may contain links to third-party websites or services (such as GitHub or social networks). Those third parties have their own privacy policies; we are not responsible for their practices. Please read their policies before leaving this site.",
+          "If third-party components are embedded (e.g., analytics scripts), we assess necessity before enabling them and prefer privacy-friendly options where possible."
+        ]
+      },
+      {
+        "heading": "8. Children's Privacy",
+        "paragraphs": [
+          "Our services are intended for adults with full civil capacity. If we learn that we have collected a child's information inadvertently, we will delete it promptly.",
+          "If you are a guardian and believe a child has provided information to us, please contact us below so we can take action."
+        ]
+      },
+      {
+        "heading": "9. Updates to This Policy",
+        "paragraphs": [
+          "We may revise this Privacy Policy from time to time. Updated versions are published on this page with a new “Last updated” date.",
+          "If changes materially affect your rights or obligations, we will notify you through prominent means such as an on-site notice or email within a reasonable period."
+        ]
+      },
+      {
+        "heading": "10. Contact Us",
+        "paragraphs": [
+          "If you have questions, comments, or complaints about this Privacy Policy, or wish to exercise your data rights, contact us:",
+          "We will respond within the periods required by applicable law."
+        ],
+        "items": [
+          "Email: znbsys@outlook.com",
+          "Address: Motomachi Tamatsukuri, Tennoji Ward, Osaka City"
+        ]
+      }
+    ]
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "description": "ZnbSys Terms of Service: your rights, obligations, and our responsibilities when you access this site and related services.",
+    "updatedAt": "2026-09-24",
+    "intro": "Welcome to ZnbSys. Please read these Terms of Service carefully before accessing or using our services. By accessing or using the services, you acknowledge that you have read, understood, and agree to be bound by these Terms.",
+    "sections": [
+      {
+        "heading": "1. The Services",
+        "paragraphs": [
+          "ZnbSys provides services related to our AI Agent platform, including without limitation website content, product trials, documentation, and community resources.",
+          "We may adjust, upgrade, or discontinue service content or features and will notify affected users in advance where reasonably possible."
+        ]
+      },
+      {
+        "heading": "2. Accounts and Registration",
+        "paragraphs": [
+          "Where registration is required, you must provide true, accurate, and complete information and keep it up to date.",
+          "You are responsible for activity under your account and must safeguard your credentials. Notify us immediately of any unauthorized use."
+        ]
+      },
+      {
+        "heading": "3. Acceptable Use",
+        "paragraphs": [
+          "You must comply with applicable laws and public order and morals when using the services. You must not:",
+          "If you violate these acceptable-use rules, we may warn you, limit features, suspend or terminate the service, and reserve the right to pursue legal remedies."
+        ],
+        "items": [
+          "Violate laws or endanger national security or the public interest;",
+          "Infringe intellectual property, trade secrets, privacy, or other rights;",
+          "Distribute malware, conduct attacks, scrape, or interfere with normal operation;",
+          "Impersonate others or make false or misleading statements;",
+          "Resell services commercially or run automated bulk scraping without written authorization."
+        ]
+      },
+      {
+        "heading": "4. Intellectual Property",
+        "paragraphs": [
+          "Site copy, design, trademarks, logos, and code structure are protected by intellectual property laws and belong to ZnbSys or its licensors.",
+          "Without prior written permission, you may not copy, modify, decompile, create derivative works from, or otherwise exploit such content, except where law expressly allows fair use.",
+          "Content you upload or generate while using the services remains yours or the original rights holder's; you grant us a non-exclusive license to use it as needed to provide and improve the services."
+        ]
+      },
+      {
+        "heading": "5. Third-Party Services and Links",
+        "paragraphs": [
+          "The services may include third-party links or integrations. Third-party services are governed by their own terms; we are not responsible for their content, privacy practices, or availability.",
+          "Including a third party does not constitute our endorsement or warranty of that party."
+        ]
+      },
+      {
+        "heading": "6. Disclaimer",
+        "paragraphs": [
+          "To the maximum extent permitted by law, the services are provided on an “as is” and “as available” basis without warranties of any kind, express or implied, including merchantability, fitness for a particular purpose, and non-infringement.",
+          "We do not warrant that the services will be uninterrupted, error-free, or meet your specific requirements, and we are not liable for indirect losses such as lost profits or data loss arising from use of the services."
+        ]
+      },
+      {
+        "heading": "7. Limitation of Liability",
+        "paragraphs": [
+          "To the extent permitted by law, our aggregate liability under these Terms for the services is capped at the fees you actually paid for the relevant services in the twelve (12) months before the claim arose (or zero if no fees apply).",
+          "Some jurisdictions do not allow certain exclusions or limitations, so the above may not apply to you in those jurisdictions."
+        ]
+      },
+      {
+        "heading": "8. Changes and Termination",
+        "paragraphs": [
+          "You may stop using the services at any time. If these Terms terminate, provisions that by nature should survive (such as intellectual property, disclaimers, and liability limits) will continue in effect.",
+          "If we reasonably believe you have materially violated these Terms, we may suspend or terminate your access with or without notice."
+        ]
+      },
+      {
+        "heading": "9. Updates to These Terms",
+        "paragraphs": [
+          "We may revise these Terms from time to time. Revised versions are published on this page with an updated “Last updated” date.",
+          "Material changes will be communicated reasonably. Continued use after publication constitutes acceptance of the revised Terms; if you disagree, please stop using the services."
+        ]
+      },
+      {
+        "heading": "10. Governing Law and Disputes",
+        "paragraphs": [
+          "These Terms and any disputes arising from them are governed by the laws of the People's Republic of China (excluding the laws of Hong Kong, Macau, and Taiwan).",
+          "Disputes shall first be resolved through good-faith negotiation. If negotiation fails, either party may submit the dispute to the people's court with jurisdiction where our principal office is located."
+        ]
+      },
+      {
+        "heading": "11. Contact",
+        "paragraphs": [
+          "If you have questions about these Terms of Service, contact us:"
+        ],
+        "items": [
+          "Email: znbsys@outlook.com",
+          "Address: Motomachi Tamatsukuri, Tennoji Ward, Osaka City"
+        ]
+      }
+    ]
+  },
+  "changelog": {
+    "title": "Changelog",
+    "description": "ZnbSys changelog: a full timeline of releases, features, improvements, and fixes.",
+    "updatedAt": "2026-09-25",
+    "intro": "This page lists ZnbSys releases. Newer versions appear first so you can catch up on recent changes quickly.",
+    "sections": [
+      {
+        "heading": "Versioning",
+        "paragraphs": [
+          "Versions follow semantic versioning: the major number marks breaking changes, the minor number marks backward-compatible features, and the patch number marks backward-compatible fixes.",
+          "Entries marked as “now available” are the currently recommended release."
+        ]
+      }
+    ],
+    "releases": [
+      {
+        "version": "1.0.0",
+        "date": "2026-09-25",
+        "title": "Version 1.0 is now available",
+        "items": [
+          "First stable release: JSON-config-driven multilingual corporate site (zh-CN / en / ja)",
+          "Full-site theming: one-click primary color with dark / light backgrounds and live admin preview",
+          "New Privacy Policy, Terms of Service, and Changelog pages with working footer legal links",
+          "Dual deployment: free GitHub Pages static hosting and self-hosted standalone builds",
+          "Quality gates: config validation, i18n parity, lint, typecheck, and 70+ unit tests"
+        ]
+      }
+    ]
+  }
+}

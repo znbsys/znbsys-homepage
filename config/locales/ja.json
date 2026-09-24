@@ -1,0 +1,154 @@
+{
+  "meta": {
+    "title": "ZnbSys - 次世代 AI エージェント構築プラットフォーム",
+    "description": "企業向けの高性能 AI エージェント開発・オーケストレーション基盤。JSON 設定ひとつでWebサイトが完成します。",
+    "keywords": ["AI エージェント", "コーポレートサイト", "Next.js", "Tailwind CSS"],
+    "favicon": "/favicon.ico",
+    "ogImage": "/og.png",
+    "locale": "ja"
+  },
+  "theme": {
+    "primary": "#2563eb",
+    "secondary": "#7c3aed",
+    "radius": "xl",
+    "font": "sans",
+    "background": "gradient"
+  },
+  "brand": {
+    "name": "ZnbSys",
+    "logoSvg": "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M13 2 3 14h9l-1 8 10-12h-9l1-8z'/></svg>",
+    "tagline": "インテリジェントエージェントが未来を動かす"
+  },
+  "navbar": {
+    "sticky": true,
+    "links": [
+      { "label": "主な機能", "href": "#features" },
+      { "label": "会社概要", "href": "#about" },
+      { "label": "お客様の声", "href": "#testimonials" },
+      { "label": "お問い合わせ", "href": "#contact" }
+    ],
+    "ctaButton": { "text": "今すぐ始める", "href": "#contact" }
+  },
+  "hero": {
+    "badge": "🚀 バージョン 1.0 リリース中",
+    "headline": "高スループットでモジュール型のエンタープライズ AI エージェント基盤を構築",
+    "subheadline": "リアクティブアーキテクチャに基づく設計。JSON 設定ひとつで、数分でカスタム AI 業務フローをデプロイできます。",
+    "primaryCta": { "text": "無料で試す", "href": "#contact" },
+    "secondaryCta": { "text": "ドキュメントを見る", "href": "https://github.com/znbsys/znbsys-homepage", "target": "_blank" }
+  },
+  "features": {
+    "title": "ZnbSys が選ばれる理由",
+    "subtitle": "エージェントの開発・オーケストレーション・監視を end-to-end で支援",
+    "columns": 3,
+    "items": [
+      {
+        "iconName": "Zap",
+        "title": "圧倒的な高速応答",
+        "description": "最適化されたデータパイプラインにより、ミリ秒単位のストリーミング応答と並行スケジューリングを実現。"
+      },
+      {
+        "iconName": "Shield",
+        "title": "エンタープライズセキュリティ",
+        "description": "コンプライアンス防御網とサンドボックス分離機構を内蔵し、データのプライバシーを保護。"
+      },
+      {
+        "iconName": "Layers",
+        "title": "モジュール型オーケストレーション",
+        "description": "Tools・Memory・LLM ドライバーを柔軟に抜き差しでき、容易に拡張可能。"
+      },
+      {
+        "iconName": "GitBranch",
+        "title": "ビジュアルワークフロー",
+        "description": "ドラッグ＆ドロップでエージェントのワークフローを編成し、各実行ステップをリアルタイムに観測。"
+      },
+      {
+        "iconName": "BarChart3",
+        "title": "完全な可観測性",
+        "description": "トークン消費・レイテンシ・成功率のダッシュボードを内蔵し、コストを一目で把握。"
+      },
+      {
+        "iconName": "Plug",
+        "title": "プラグ＆プレイのエコシステム",
+        "description": "80 以上のデータソースコネクタをプリセット。既存システムへ 10 分で接続。"
+      }
+    ]
+  },
+  "about": {
+    "title": "エンタープライズの生産性エンジンを再構築する",
+    "description": [
+      "ZnbSys は、企業が人工知能を導入する際の障壁を下げることを目指しています。",
+      "私たちのオープンソースエコシステムと商用ツールチェーンは、すでに世界中の数百社の自社業務の知能化を支援しています。"
+    ],
+    "stats": [
+      { "label": "導入企業", "value": "500", "suffix": "+" },
+      { "label": "1 日あたり API 呼び出し", "value": "10M", "suffix": "+" },
+      { "label": "オープンソース Star 数", "value": "12k", "suffix": "+" }
+    ]
+  },
+  "testimonials": {
+    "title": "業界のリーダーから信頼されています",
+    "subtitle": "規模を問わず、さまざまなチームからのリアルな声",
+    "items": [
+      {
+        "quote": "ZnbSys によって AI 事業のリードタイムを 70% 短縮できました。アーキテクチャの明快さには驚かされます。",
+        "author": "張 偉",
+        "role": "CTO",
+        "company": "テックフロンティア株式会社",
+        "rating": 5
+      },
+      {
+        "quote": "POC から本番環境までわずか 3 週間。運用コストも自社構築よりはるかに抑えられました。",
+        "author": "李 娜",
+        "role": "技術ディレクター",
+        "company": "雲啓科技",
+        "rating": 5
+      },
+      {
+        "quote": "サンドボックス分離があるおかげで、中核データを安心してエージェントに任せられます。",
+        "author": "王 強",
+        "role": "アーキテクト",
+        "company": "データインテリジェンス未来",
+        "rating": 4
+      }
+    ]
+  },
+  "contact": {
+    "title": "AI トランスフォーメーションを始める準備はできましたか？",
+    "subtitle": "ご連絡先をお知らせください。ソリューションアーキテクトが 24 時間以内にご連絡します。",
+    "email": "znbsys@outlook.com",
+    "phone": "+86 (021) 8888-9999",
+    "address": "大阪市天王区玉造元町",
+    "socials": [
+      { "platform": "github", "label": "GitHub", "href": "https://github.com/znbsys/znbsys-homepage" },
+      { "platform": "x", "label": "X", "href": "https://x.com/znbsys" },
+      { "platform": "email", "label": "メール", "href": "mailto:znbsys@outlook.com" }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2026 ZnbSys Inc. 無断複写・転載を禁じます。",
+    "linkGroups": [
+      {
+        "title": "製品",
+        "links": [
+          { "label": "主な機能", "href": "/ja/#features" },
+          { "label": "更新履歴", "href": "/ja/changelog/" }
+        ]
+      },
+      {
+        "title": "リソース",
+        "links": [
+          { "label": "開発ドキュメント", "href": "https://github.com/znbsys/znbsys-homepage" },
+          { "label": "コミュニティ", "href": "https://github.com/znbsys/znbsys-homepage" }
+        ]
+      },
+      {
+        "title": "法務",
+        "links": [
+          { "label": "プライバシーポリシー", "href": "/ja/privacy/" },
+          { "label": "利用規約", "href": "/ja/terms/" }
+        ]
+      }
+    ]
+  },
+  "order": ["hero", "features", "about", "testimonials", "contact"]
+}

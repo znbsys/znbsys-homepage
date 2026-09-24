@@ -1,0 +1,19 @@
+{
+  "nav.openMenu": "Open menu",
+  "nav.closeMenu": "Close menu",
+  "nav.primary": "Primary navigation",
+  "hero.badgeFallback": "Latest updates",
+  "testimonials.ratingLabel": "Rated {rating} out of 5",
+  "testimonials.avatarFallback": "Anonymous",
+  "contact.email": "Email",
+  "contact.phone": "Phone",
+  "contact.address": "Address",
+  "contact.followUs": "Follow us",
+  "footer.backToTop": "Back to top",
+  "language.switch": "Switch language",
+  "language.current": "Current language: {label}",
+  "notFound.title": "Page not found",
+  "notFound.description": "Sorry, the page you are looking for has been removed or never existed.",
+  "notFound.backHome": "Back to home",
+  "icon.missing": "Missing icon"
+}

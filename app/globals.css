@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: 37 99 235;
+  --color-secondary: 124 58 237;
+  /* 语义主题令牌（默认值 = 原 slate/white/blue 取值，保证默认主题不变） */
+  --color-page: 2 6 23;
+  --color-band: 15 23 42;
+  --color-surface: 30 41 59;
+  --color-line: 30 41 59;
+  --color-line-strong: 51 65 85;
+  --color-panel: 255 255 255;
+  --color-panel-line: 226 232 240;
+  --color-wash: 248 250 252;
+  --color-accent: 96 165 250;
+  /* 文字令牌（默认 = 原 white/slate 系） */
+  --color-title: 255 255 255;
+  --color-ink: 241 245 249;
+  --color-soft: 203 213 225;
+  --color-muted: 148 163 184;
+  --radius-card: 1rem;
+  --font-cjk: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif;
+  --font-latin: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-sans: var(--font-latin);
+}
+
+/* CJK 排版微调 */
+html[lang^='zh'] body,
+html[lang^='ja'] body {
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+
+/* 尊重 prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

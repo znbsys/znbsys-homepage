@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">
+  <rect width="880" height="420" fill="#ffffff"/>
+  <text x="32" y="44" font-size="22" fill="#24292f">Actions → Deploy to GitHub Pages</text>
+  <text x="32" y="78" font-size="14" fill="#57606a">手动触发首次部署（也可直接再 push 一次 main）</text>
+
+  <!-- run workflow button -->
+  <rect x="32" y="104" width="300" height="96" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+  <text x="56" y="134" font-size="13" font-weight="700" fill="#24292f">④ Run workflow</text>
+  <rect x="56" y="150" width="200" height="34" rx="6" fill="#f6f8fa" stroke="#d0d7de"/>
+  <text x="70" y="172" font-size="13" fill="#24292f">▶ Run workflow ▾</text>
+  <text x="56" y="228" font-size="13" fill="#57606a">分支保持 main → 绿色按钮确认</text>
+
+  <!-- pipeline -->
+  <rect x="372" y="104" width="476" height="240" rx="8" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="396" y="136" font-size="14" font-weight="700" fill="#24292f">运行状态（全部绿色即成功）</text>
+
+  <rect x="396" y="156" width="12" height="12" rx="6" fill="#1f883d"/>
+  <text x="420" y="167" font-size="13" fill="#24292f">build / Quality gates</text>
+  <text x="640" y="167" font-size="13" fill="#57606a">validate · i18n · lint · test</text>
+
+  <rect x="396" y="188" width="12" height="12" rx="6" fill="#1f883d"/>
+  <text x="420" y="199" font-size="13" fill="#24292f">build / Build static export</text>
+  <text x="640" y="199" font-size="13" fill="#57606a">STATIC_EXPORT=1 → out/</text>
+
+  <rect x="396" y="220" width="12" height="12" rx="6" fill="#1f883d"/>
+  <text x="420" y="231" font-size="13" fill="#24292f">deploy / Deploy to GitHub Pages</text>
+  <text x="640" y="231" font-size="13" fill="#57606a">actions/deploy-pages</text>
+
+  <line x1="396" y1="256" x2="824" y2="256" stroke="#d0d7de"/>
+  <text x="396" y="286" font-size="13" font-weight="700" fill="#1a7f37">点开 deploy job → summary 查看 page_url</text>
+  <rect x="396" y="300" width="428" height="28" rx="6" fill="#ddf4ff"/>
+  <text x="410" y="319" font-size="13" fill="#0969da">https://&lt;owner&gt;.github.io/&lt;repo&gt;/</text>
+
+  <!-- failure hint -->
+  <rect x="32" y="256" width="300" height="88" rx="8" fill="#ffebe9" stroke="#cf222e"/>
+  <text x="56" y="286" font-size="13" font-weight="700" fill="#a40e26">若 deploy 报错</text>
+  <text x="56" y="312" font-size="13" fill="#a40e26">Environment not found / forbidden</text>
+  <text x="56" y="336" font-size="13" fill="#a40e26">→ 回到第 ①② 步检查 Pages 设置</text>
+</svg>

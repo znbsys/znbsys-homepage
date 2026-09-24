@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">
+  <rect width="880" height="420" fill="#f6f8fa"/>
+  <rect x="0" y="0" width="880" height="52" fill="#24292f"/>
+  <text x="24" y="33" fill="#ffffff" font-size="16" font-weight="600">GitHub</text>
+  <text x="100" y="33" fill="#ffffff" font-size="14">your-name / znbsys-homepage</text>
+  <rect x="0" y="52" width="880" height="44" fill="#ffffff"/>
+  <line x1="0" y1="96" x2="880" y2="96" stroke="#d0d7de"/>
+  <text x="32" y="80" font-size="14" fill="#24292f">Code</text>
+  <text x="100" y="80" font-size="14" fill="#24292f">Issues</text>
+  <text x="170" y="80" font-size="14" fill="#24292f">Pull requests</text>
+  <text x="290" y="80" font-size="14" fill="#24292f">Actions</text>
+  <text x="370" y="80" font-size="14" fill="#24292f">Projects</text>
+  <text x="460" y="80" font-size="14" fill="#24292f">Wiki</text>
+  <!-- left sidebar -->
+  <rect x="0" y="96" width="240" height="324" fill="#ffffff"/>
+  <line x1="240" y1="96" x2="240" y2="420" stroke="#d0d7de"/>
+  <text x="24" y="130" font-size="13" font-weight="600" fill="#57606a">Settings</text>
+  <rect x="12" y="148" width="216" height="32" rx="6" fill="#ddf4ff"/>
+  <text x="28" y="169" font-size="14" fill="#0969da" font-weight="600">General</text>
+  <text x="28" y="211" font-size="14" fill="#24292f">Access</text>
+  <text x="28" y="247" font-size="14" fill="#24292f">Moderation</text>
+  <text x="28" y="283" font-size="14" fill="#24292f">Code and automation</text>
+  <rect x="12" y="300" width="216" height="32" rx="6" fill="#ddf4ff" stroke="#0969da" stroke-width="2"/>
+  <text x="28" y="321" font-size="14" fill="#0969da" font-weight="700">Pages</text>
+  <text x="28" y="357" font-size="14" fill="#24292f">Security</text>
+  <text x="28" y="393" font-size="14" fill="#24292f">Code security</text>
+  <!-- main pane -->
+  <text x="272" y="140" font-size="24" font-weight="400" fill="#24292f">Pages</text>
+  <text x="272" y="176" font-size="14" fill="#57606a">Your GitHub Pages site is published from a GitHub Actions workflow.</text>
+  <rect x="272" y="200" width="560" height="140" rx="8" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="296" y="232" font-size="15" font-weight="600" fill="#24292f">Build and deployment</text>
+  <text x="296" y="264" font-size="13" fill="#57606a">Source</text>
+  <rect x="360" y="246" width="300" height="34" rx="6" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="376" y="268" font-size="14" fill="#24292f">GitHub Actions</text>
+  <path d="M636 258 l8 8 8-8" fill="none" stroke="#57606a" stroke-width="2"/>
+  <circle cx="310" cy="300" r="8" fill="#1f883d"/>
+  <path d="M306 300 l3 3 6-7" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <text x="330" y="305" font-size="13" fill="#1a7f37">Source = GitHub Actions ✓（本项目所需配置）</text>
+  <!-- arrow hint -->
+  <rect x="680" y="120" width="170" height="44" rx="8" fill="#fff8c5" stroke="#d4a72c"/>
+  <text x="694" y="147" font-size="13" font-weight="600" fill="#7d4e00">① Settings → Pages</text>
+</svg>
