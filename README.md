@@ -280,5 +280,5 @@ Logs: `/opt/znbsys-homepage/server.log`
 ## Related docs
 
 - Design reference: [awesome-design-md](https://github.com/voltagent/awesome-design-md) — source of the project's design conventions
-- [`SPEC.md`](./SPEC.md) — requirements & acceptance cases (UT-/E2E- IDs)
+- [`docs/SPEC.md`](docs/SPEC.md) — requirements & acceptance cases (UT-/E2E- IDs)
 - [`LICENSE`](./LICENSE)

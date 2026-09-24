@@ -280,5 +280,5 @@ cd current && nohup env PORT=3000 HOSTNAME=0.0.0.0 \
 ## 相关文档
 
 - 设计参考：[awesome-design-md](https://github.com/voltagent/awesome-design-md) — 项目的设计规范来源
-- [`SPEC.md`](./SPEC.md) — 需求与验收用例（UT-/E2E- 编号）
+- [`docs/SPEC.md`](docs/SPEC.md) — 需求与验收用例（UT-/E2E- 编号）
 - [`LICENSE`](./LICENSE)

@@ -1,7 +1,7 @@
 # znbsys-homepage 完整开发与测试规范（Single Source of Truth）
 
-> 本文件是本项目**唯一权威规范**。它整合并修正了 `README.md` 与 `DESING.md` 两份需求文档中互相冲突的部分，补齐了缺失的组件实现、**多语言（i18n）能力**与测试策略。
-> 执行者（人或 AI）只需按本文件自上而下推进，即可完成**全部开发 + 全部测试**并达成验收。
+> 本文件是本项目 **唯一权威规范**。它整合并修正了 `../README.md` 与 `DESING.md` 两份需求文档中互相冲突的部分，补齐了缺失的组件实现、 **多语言（i18n）能力**与测试策略。
+> 执行者（人或 AI）只需按本文件自上而下推进，即可完成 **全部开发 + 全部测试**并达成验收。
 >
 > 设计参考：[awesome-design-md](https://github.com/voltagent/awesome-design-md)
 
@@ -34,7 +34,7 @@
 
 ### 1.1 冲突矩阵
 
-| 维度 | `README.md` | `DESING.md` | 本规范的裁决 |
+| 维度 | `../README.md` | `DESING.md` | 本规范的裁决 |
 | --- | --- | --- | --- |
 | 交付形态 | 单文件 `index.html` | Next.js 工程 | **双轨**：Next.js 为主产物，单文件 HTML 为构建产物（见 T14） |
 | 样式方案 | Tailwind CDN | Tailwind 构建期编译 | 主产物用编译版（可 purge）；单文件用 CDN，二者类名集合保持一致 |
@@ -49,7 +49,7 @@
 | --- | --- | --- | --- |
 | G1 | `Navbar` / `Footer` 组件未给出实现 | P0 | T6 |
 | G2 | `About` / `Testimonials` / `Contact` 组件未给出实现 | P0 | T7、T8、T9 |
-| G3 | `globals.css`、`tailwind.config.ts`、`package.json` 缺失 | P0 | T1、T2 |
+| G3 | `globals.css`、`../tailwind.config.ts`、`package.json` 缺失 | P0 | T1、T2 |
 | G4 | 图标名无校验，JSON 写错名字会静默退化成 `HelpCircle` | P0 | T5 + UT-009 |
 | G5 | 移动端导航（汉堡菜单）未定义 | P0 | T6 + E2E-004 |
 | G6 | 完全没有任何测试策略 | P0 | 第 6、7 章 |
@@ -65,7 +65,7 @@
 ### 1.3 明确废止的旧要求
 
 1. `DESING.md` 中"禁止占位符缩写"的要求**保留**，但其自身只提供了 5 个组件中的 4 段代码，本规范以 T1–T11 补齐全部代码。
-2. `README.md` 中"在 JS 里内嵌默认 `siteData`"的要求**改为**：单文件 HTML 在构建时由 `config/locales/{locale}.json` 注入，禁止手写第二份副本。
+2. `../README.md` 中"在 JS 里内嵌默认 `siteData`"的要求 **改为**：单文件 HTML 在构建时由 `config/locales/{locale}.json` 注入，禁止手写第二份副本。
 3. **新增硬性约束**：组件内禁止出现任何自然语言字符串（中文、英文、日文一律禁止），必须走 `t()` 或 props。违反者 CR 直接打回。
 
 ---
@@ -135,7 +135,7 @@ ESLint 8.x + Prettier 3.x
 
 | 决策点 | 结论 |
 | --- | --- |
-| 路由形态 | **路径前缀** `app/[locale]/`（非域名、非 query），利于 SEO 与静态导出 |
+| 路由形态 | **路径前缀** `../app/[locale]`（非域名、非 query），利于 SEO 与静态导出 |
 | 默认语言 | `zh-CN`，**不省略前缀**；`/` 由 middleware 302 到 `/zh-CN`（避免 `/` 与 `/zh-CN` 内容重复） |
 | 协商优先级 | URL 前缀 > cookie `NEXT_LOCALE` > `Accept-Language` > 默认 |
 | 重定向状态码 | **302/307 临时**，禁用 308（永久重定向会被浏览器缓存，导致用户改不了语言） |
@@ -227,7 +227,7 @@ znbsys-homepage/
 
 ## 4. 统一数据契约
 
-### 4.1 TypeScript 类型定义（`types/siteConfig.ts`）
+### 4.1 TypeScript 类型定义（`../types/siteConfig.ts`）
 
 ```typescript
 /** 主题配置：驱动全站配色与圆角 */
@@ -397,7 +397,7 @@ export const DEFAULT_SECTION_ORDER: SectionKey[] = [
 
 > `about` 与 `testimonials` 为可选：缺失时对应组件不渲染，页面不得出现空 Section（由 IT-003 / IT-004 守护）。
 
-### 4.2 Zod 运行时校验（`schemas/siteConfigSchema.ts`）
+### 4.2 Zod 运行时校验（`../schemas/siteConfigSchema.ts`）
 
 ```typescript
 import { z } from 'zod';
@@ -512,9 +512,9 @@ export const SiteConfigSchema = z.object({
 export type SiteConfigInput = z.input<typeof SiteConfigSchema>;
 ```
 
-### 4.3 内容配置（`config/locales/zh-CN.json`）
+### 4.3 内容配置（`../config/locales/zh-CN.json`）
 
-默认语言，字段完整、可直接运行（原 `config/site-data.json` 内容迁移至此）：
+默认语言，字段完整、可直接运行（原 `../config/site-data.json` 内容迁移至此）：
 
 ```json
 {
@@ -617,14 +617,14 @@ export type SiteConfigInput = z.input<typeof SiteConfigSchema>;
 
 ### 4.4 测试夹具
 
-- `config/fixtures/minimal.json`：**仅含必填字段**，用于验证可选 Section 缺省不崩溃。
-- `config/fixtures/brand-b.json`：换品牌配置（不同 `theme.primary`、不同栏目文案、仅 2 个 feature），用于多站点切换测试与视觉对比。
+- `../config/fixtures/minimal.json`： **仅含必填字段**，用于验证可选 Section 缺省不崩溃。
+- `../config/fixtures/brand-b.json`：换品牌配置（不同 `theme.primary`、不同栏目文案、仅 2 个 feature），用于多站点切换测试与视觉对比。
 
 ---
 
 ## 4.5 多语言（i18n）契约
 
-### 4.5.1 Locale 常量与协商（`i18n/config.ts`）
+### 4.5.1 Locale 常量与协商（`../i18n/config.ts`）
 
 ```typescript
 export const locales = ['zh-CN', 'en', 'ja'] as const;
@@ -730,7 +730,7 @@ export function stripLocale(pathname: string): { locale: Locale | null; path: st
 
 **扁平 key + `{var}` 插值**，所有 locale 的 key 集合必须完全一致（I18N-004）。
 
-`messages/zh-CN.json`：
+`../messages/zh-CN.json`：
 
 ```json
 {
@@ -754,7 +754,7 @@ export function stripLocale(pathname: string): { locale: Locale | null; path: st
 }
 ```
 
-`messages/en.json`：
+`../messages/en.json`：
 
 ```json
 {
@@ -778,7 +778,7 @@ export function stripLocale(pathname: string): { locale: Locale | null; path: st
 }
 ```
 
-`messages/ja.json`：
+`../messages/ja.json`：
 
 ```json
 {
@@ -802,9 +802,9 @@ export function stripLocale(pathname: string): { locale: Locale | null; path: st
 }
 ```
 
-### 4.5.3 插值函数（`i18n/t.ts`）—— 客户端安全
+### 4.5.3 插值函数（`../i18n/t.ts`）—— 客户端安全
 
-> **必须单独成文件。** `i18n/request.ts` 带 `import 'server-only'`，而 `LanguageSwitcher` 等客户端组件同样需要 `t()` 做插值。若把 `t()` 放进 `request.ts`，客户端组件一旦引入就会构建失败。
+> **必须单独成文件。** `../i18n/request.ts` 带 `import 'server-only'`，而 `LanguageSwitcher` 等客户端组件同样需要 `t()` 做插值。若把 `t()` 放进 `request.ts`，客户端组件一旦引入就会构建失败。
 
 ```typescript
 export type Dictionary = Record<string, string>;
@@ -824,7 +824,7 @@ export function t(dict: Dictionary, key: string, vars?: Record<string, string | 
 }
 ```
 
-### 4.5.4 字典加载（`i18n/request.ts`）—— 仅服务端
+### 4.5.4 字典加载（`../i18n/request.ts`）—— 仅服务端
 
 ```typescript
 import 'server-only';
@@ -870,7 +870,7 @@ export async function getDictionary(locale: Locale): Promise<Dictionary> {
 
 ```
 
-`t()` 由 `i18n/t.ts` 提供，此处通过 `export { t } from './t'` 再导出，供服务端组件直接使用。
+`t()` 由 `../i18n/t.ts` 提供，此处通过 `export { t } from './t'` 再导出，供服务端组件直接使用。
 
 ### 4.5.5 hreflang 与 og:locale 生成
 
@@ -896,7 +896,7 @@ export function buildOgLocale(current: Locale) {
 }
 ```
 
-### 4.5.6 翻译完整性校验脚本（`scripts/check-i18n-parity.mjs`）
+### 4.5.6 翻译完整性校验脚本（`../scripts/check-i18n-parity.mjs`）
 
 CI 门禁 5 的核心，检查三件事：
 
@@ -916,7 +916,7 @@ CI 门禁 5 的核心，检查三件事：
 
 ### T1 工程脚手架
 
-**产出物**：`package.json`、`tsconfig.json`、`next.config.mjs`、`postcss.config.js`、`.eslintrc.json`、`.prettierrc`
+**产出物**：`../package.json`、`tsconfig.json`、`next.config.mjs`、`postcss.config.js`、`.eslintrc.json`、`.prettierrc`
 
 ```json
 {
@@ -970,7 +970,7 @@ CI 门禁 5 的核心，检查三件事：
 }
 ```
 
-`tsconfig.json` 关键点：`"strict": true`、`"noUncheckedIndexedAccess": true`、`"resolveJsonModule": true`、`paths: { "@/*": ["./*"] }`。
+`../tsconfig.json` 关键点：`"strict": true`、`"noUncheckedIndexedAccess": true`、`"resolveJsonModule": true`、`paths: { "@/*": ["./*"] }`。
 
 **验收标准**
 - [ ] `npm install` 无 `ERESOLVE` 错误，无 `npm audit` 高危项。
@@ -981,7 +981,7 @@ CI 门禁 5 的核心，检查三件事：
 
 ### T2 Tailwind 与全局样式
 
-**产出物**：`tailwind.config.ts`、`app/globals.css`
+**产出物**：`../tailwind.config.ts`、`app/globals.css`
 
 ```typescript
 import type { Config } from 'tailwindcss';
@@ -1029,7 +1029,7 @@ export default config;
 
 ### T3 类型契约与 Zod Schema
 
-**产出物**：`types/siteConfig.ts`、`schemas/siteConfigSchema.ts`（见 4.1 / 4.2）
+**产出物**：`../types/siteConfig.ts`、`schemas/siteConfigSchema.ts`（见 4.1 / 4.2）
 
 **验收标准**
 - [ ] `tsc --noEmit` 通过。
@@ -1039,9 +1039,9 @@ export default config;
 
 ### T4 配置读取中心
 
-**产出物**：`lib/config.ts`、`lib/cn.ts`
+**产出物**：`../lib/config.ts`、`lib/cn.ts`
 
-多语言版本下 `lib/config.ts` 仅作为**默认 locale 的同步便捷入口**（供脚本与非 React 场景使用），真实读取走 `i18n/request.ts`：
+多语言版本下 `../lib/config.ts` 仅作为**默认 locale 的同步便捷入口**（供脚本与非 React 场景使用），真实读取走 `i18n/request.ts`：
 
 ```typescript
 import defaultData from '@/config/locales/zh-CN.json';
@@ -1078,9 +1078,9 @@ export { defaultLocale, type Locale };
 
 ### T5 动态图标与白名单
 
-**产出物**：`lib/icons.ts`、`components/DynamicIcon.tsx`
+**产出物**：`../lib/icons.ts`、`components/DynamicIcon.tsx`
 
-`lib/icons.ts` 导出 `ICON_WHITELIST: string[]`（至少包含：`Zap`、`Shield`、`Layers`、`GitBranch`、`BarChart3`、`Plug`、`Rocket`、`Sparkles`、`Lock`、`Users`、`Mail`、`Phone`、`MapPin`、`Github`、`Twitter`、`Menu`、`X`、`ArrowRight`、`Check`、`Star`、`Globe`、`Languages`）。
+`../lib/icons.ts` 导出 `ICON_WHITELIST: string[]`（至少包含：`Zap`、`Shield`、`Layers`、`GitBranch`、`BarChart3`、`Plug`、`Rocket`、`Sparkles`、`Lock`、`Users`、`Mail`、`Phone`、`MapPin`、`Github`、`Twitter`、`Menu`、`X`、`ArrowRight`、`Check`、`Star`、`Globe`、`Languages`）。
 
 ```tsx
 import * as Icons from 'lucide-react';
@@ -1115,7 +1115,7 @@ export function DynamicIcon({ name, fallbackLabel, ...props }: DynamicIconProps)
 
 ### T6 Navbar + MobileMenu + Footer
 
-**产出物**：`components/layout/Navbar.tsx`、`MobileMenu.tsx`、`Footer.tsx`
+**产出物**：`../components/layout/Navbar.tsx`、`MobileMenu.tsx`、`Footer.tsx`
 
 要点：
 - `Navbar`：`sticky top-0 z-50 backdrop-blur`，滚动超过 8px 增加底边阴影（`'use client'` + `scroll` 监听）。接收 `dict` prop，`aria-label` 用 `t(dict,'nav.primary')`。
@@ -1131,7 +1131,7 @@ export function DynamicIcon({ name, fallbackLabel, ...props }: DynamicIconProps)
 
 ### T7 Hero + Features
 
-**产出物**：`components/sections/Hero.tsx`、`Features.tsx`
+**产出物**：`../components/sections/Hero.tsx`、`Features.tsx`
 
 要点：
 - `Hero`：`theme.background` 三种形态分支；`backgroundImage` 存在时叠遮罩层；`badge` 缺省不渲染占位。
@@ -1145,7 +1145,7 @@ export function DynamicIcon({ name, fallbackLabel, ...props }: DynamicIconProps)
 
 ### T8 About + Testimonials
 
-**产出物**：`components/sections/About.tsx`、`Testimonials.tsx`
+**产出物**：`../components/sections/About.tsx`、`Testimonials.tsx`
 
 要点：
 - `About`：左文右图（`lg:grid-cols-2`），`imageUrl` 缺省时文字占满宽度。
@@ -1159,7 +1159,7 @@ export function DynamicIcon({ name, fallbackLabel, ...props }: DynamicIconProps)
 
 ### T9 Contact
 
-**产出物**：`components/sections/Contact.tsx`
+**产出物**：`../components/sections/Contact.tsx`
 
 要点：`title` + `subtitle` + 三行信息（`Mail`/`Phone`/`MapPin`，缺省项跳过）+ 社交链接。字段标签（`contact.email` 等）全部来自字典。`email` 渲染为 `mailto:`，`phone` 渲染为 `tel:`（去空格）。
 
@@ -1171,16 +1171,16 @@ export function DynamicIcon({ name, fallbackLabel, ...props }: DynamicIconProps)
 
 ### T10 页面组装与 SEO（locale 感知）
 
-**产出物**：`app/layout.tsx`、`app/[locale]/layout.tsx`、`app/[locale]/page.tsx`、`app/[locale]/not-found.tsx`、`app/not-found.tsx`
+**产出物**：`../app/layout.tsx`、`app/[locale]/layout.tsx`、`app/[locale]/page.tsx`、`app/[locale]/not-found.tsx`、`app/not-found.tsx`
 
-- `app/layout.tsx`：最小根布局，仅 `<html><body>{children}</body></html>`，供全局 404 使用。
-- `app/[locale]/layout.tsx`：
+- `../app/layout.tsx`：最小根布局，仅 `<html><body>{children}</body></html>`，供全局 404 使用。
+- `../app/[locale]/layout.tsx`：
   - `params.locale` 校验，非法值调 `notFound()`。
   - `<html lang={localeMeta[locale].htmlLang} dir={localeMeta[locale].dir} className={localeMeta[locale].fontStack === 'cjk' ? 'font-cjk' : 'font-latin'}>`。
   - `generateStaticParams` 返回全部 locales。
   - `generateMetadata` 输出 `title`、`description`、`keywords`、`openGraph.locale`/`alternateLocale`、`alternates`（`buildAlternates`）。
   - 注入 `--color-primary` 等 CSS 变量。
-- `app/[locale]/page.tsx`：按 `config.order` 组装 Section；`about`/`testimonials` 为 `undefined` 时跳过。所有 Section 组件接收 `dict` + 对应子树。
+- `../app/[locale]/page.tsx`：按 `config.order` 组装 Section；`about`/`testimonials` 为 `undefined` 时跳过。所有 Section 组件接收 `dict` + 对应子树。
 - `not-found.tsx`：使用同一主题，文案全部来自字典。
 
 **验收标准**
@@ -1192,7 +1192,7 @@ export function DynamicIcon({ name, fallbackLabel, ...props }: DynamicIconProps)
 
 ### T11 主题系统落地
 
-**产出物**：`lib/theme.ts`、`lib/color.ts`
+**产出物**：`../lib/theme.ts`、`lib/color.ts`
 
 ```typescript
 export function themeToCssVars(theme: ThemeConfig): Record<string, string> {
@@ -1229,7 +1229,7 @@ export function themeToCssVars(theme: ThemeConfig): Record<string, string> {
 
 ### T13 多站点 / 多租户（P1）
 
-**产出物**：`scripts/validate-config.ts`、`config/fixtures/brand-b.json`
+**产出物**：`../scripts/validate-config.ts`、`config/fixtures/brand-b.json`
 
 - `validate-config.ts`：CLI 接收任意 JSON 路径（支持 glob，可一次校验全部 locale），Zod 校验并打印结果，退出码非 0 表示失败。
 - 支持环境变量 `SITE_CONFIG_PATH` 覆盖默认配置路径。
@@ -1243,7 +1243,7 @@ export function themeToCssVars(theme: ThemeConfig): Record<string, string> {
 
 ### T14 单文件 HTML 分发产物（P1）
 
-**产出物**：`scripts/build-standalone.mjs`、`dist/{locale}/index.html`
+**产出物**：`../scripts/build-standalone.mjs`、`dist/{locale}/index.html`
 
 - 脚本遍历 `locales`，读取 `config/locales/{locale}.json`，序列化后注入模板占位符 `__SITE_DATA__` 与 `__DICT__`，产出 `dist/{locale}/index.html`；默认 locale 额外复制一份到 `dist/index.html`。
 - 模板使用 Tailwind CDN + Lucide CDN，DOM 容器为 `#navbar`、`#hero`、`#features`、`#about`、`#testimonials`、`#contact`、`#footer`。
@@ -1260,10 +1260,10 @@ export function themeToCssVars(theme: ThemeConfig): Record<string, string> {
 
 ### T15 i18n 基础设施
 
-**产出物**：`i18n/config.ts`、`messages/{zh-CN,en,ja}.json`
+**产出物**：`../i18n/config.ts`、`messages/{zh-CN,en,ja}.json`
 
 要点：
-- `i18n/config.ts` 按 4.5.1 实现。**新增语言的唯一代码改动点**是 `locales` 数组 + `localeMeta` 一项。
+- `../i18n/config.ts` 按 4.5.1 实现。 **新增语言的唯一代码改动点**是 `locales` 数组 + `localeMeta` 一项。
 - 三个 UI 字典按 4.5.2 实现，key 集合必须完全一致。
 - 导出 `Dictionary` 类型供所有组件 props 使用。
 - 把 `Globe`、`Languages` 加入图标白名单（供切换器使用）。
@@ -1277,26 +1277,26 @@ export function themeToCssVars(theme: ThemeConfig): Record<string, string> {
 
 ### T16 多语言内容配置与合并加载
 
-**产出物**：`config/locales/{zh-CN,en,ja}.json`、`i18n/request.ts`、`scripts/sync-default-locale.mjs`、`scripts/check-i18n-parity.mjs`
+**产出物**：`config/locales/{zh-CN,en,ja}.json`、`../i18n/request.ts`、`scripts/sync-default-locale.mjs`、`scripts/check-i18n-parity.mjs`
 
 要点：
 - 三个 locale 内容文件结构完全一致（I18N-003）。
-- `i18n/request.ts` 按 4.5.4 实现（`getSiteConfig` / `getDictionary` / `buildAlternates` / `buildOgLocale`，带构建期 `Map` 缓存）；`i18n/t.ts` 按 4.5.3 实现（`t` 插值）。
-- `sync-default-locale.mjs`：把 `config/locales/zh-CN.json` 复制为 `config/site-data.json`，保持对旧文档向后兼容。
+- `../i18n/request.ts` 按 4.5.4 实现（`getSiteConfig` / `getDictionary` / `buildAlternates` / `buildOgLocale`，带构建期 `Map` 缓存）；`i18n/t.ts` 按 4.5.3 实现（`t` 插值）。
+- `sync-default-locale.mjs`：把 `../config/locales/zh-CN.json` 复制为 `config/site-data.json`，保持对旧文档向后兼容。
 - `check-i18n-parity.mjs` 按 4.5.6 实现，作为 CI 门禁 5。
 
 **验收标准**
 - [ ] 三个 locale 均通过 Zod（I18N-001）。
 - [ ] `t()` 插值 `{rating}` 正确替换（I18N-010）。
 - [ ] 缺失 key 在开发期抛错、生产期回退并告警（I18N-011）。
-- [ ] `config/site-data.json` 与 `config/locales/zh-CN.json` 深比较相等（I18N-005）。
+- [ ] `../config/site-data.json` 与 `config/locales/zh-CN.json` 深比较相等（I18N-005）。
 - [ ] `npm run check:i18n` 退出码 0。
 
 ---
 
 ### T17 路由与中间件
 
-**产出物**：`middleware.ts`、`app/[locale]/` 路由改造
+**产出物**：`../middleware.ts`、`app/[locale]/` 路由改造
 
 ```typescript
 import { NextResponse, type NextRequest } from 'next/server';
@@ -1349,7 +1349,7 @@ export const config = {
 
 ### T18 语言切换器与 SEO 本地化
 
-**产出物**：`components/LanguageSwitcher.tsx`、`app/[locale]/layout.tsx` metadata 补全
+**产出物**：`../components/LanguageSwitcher.tsx`、`app/[locale]/layout.tsx` metadata 补全
 
 要点：
 - `LanguageSwitcher`：`'use client'`，读取当前 pathname，切换时**保留路径与 hash**（`/zh-CN/#about` → `/en/#about`），同时写 cookie。
@@ -1384,7 +1384,7 @@ export const config = {
 
 ### 6.2 测试配置
 
-`vitest.config.ts`：
+`../vitest.config.ts`：
 
 ```typescript
 import { defineConfig } from 'vitest/config';
@@ -1407,7 +1407,7 @@ export default defineConfig({
 });
 ```
 
-`playwright.config.ts`：baseURL `http://127.0.0.1:3000`，`webServer` 启动 `npm run build && npm run start`；projects 覆盖 `chromium` 与 `Mobile Chrome (Pixel 5)`；另设 `locale: 'ja'` 的 context 用于语言协商断言（I18N-015 需自定义 `extraHTTPHeaders`）。
+`../playwright.config.ts`：baseURL `http://127.0.0.1:3000`，`webServer` 启动 `npm run build && npm run start`；projects 覆盖 `chromium` 与 `Mobile Chrome (Pixel 5)`；另设 `locale: 'ja'` 的 context 用于语言协商断言（I18N-015 需自定义 `extraHTTPHeaders`）。
 
 ---
 
@@ -1498,7 +1498,7 @@ export default defineConfig({
 
 | ID | 用例 | 断言 |
 | --- | --- | --- |
-| UT-020 | 解析 `dist/index.html` 内嵌 JSON | 与 `config/locales/zh-CN.json` 深比较相等 |
+| UT-020 | 解析 `dist/index.html` 内嵌 JSON | 与 `../config/locales/zh-CN.json` 深比较相等 |
 | UT-021 | 产物内容扫描 | 不含 `TODO`、`FIXME`、`undefined` |
 | UT-022 | 各 locale 产物内嵌 JSON | 与对应 `config/locales/{locale}.json` 相等 |
 | E2E-009 | 用 `file://` 打开产物 | 7 个区块可见，无 JS 报错 |
@@ -1511,7 +1511,7 @@ export default defineConfig({
 | I18N-002 | UT | `getSiteConfig('en')` vs `getSiteConfig('zh-CN')` | `brand.name` 相同，`hero.headline` 不同 |
 | I18N-003 | UT | 全部 locale 的 **key 路径集合** 对比默认 locale | 差集为空（结构完全对齐） |
 | I18N-004 | UT | 三个 `messages/*.json` 的 key 集合 | 两两相等，且等于默认 locale |
-| I18N-005 | UT | `config/site-data.json` vs `config/locales/zh-CN.json` | 深比较相等 |
+| I18N-005 | UT | `../config/site-data.json` vs `config/locales/zh-CN.json` | 深比较相等 |
 | I18N-006 | UT | `isLocale('zh-CN')` / `isLocale('fr')` | `true` / `false` |
 | I18N-007 | UT | `negotiateLocale('ja', 'en-US,en;q=0.9')` | 返回 `'ja'`（cookie 优先） |
 | I18N-008 | UT | `matchLocale('ja-JP,ja;q=0.9,en;q=0.8')` | 返回 `'ja'`（主语言回退） |
@@ -1600,7 +1600,7 @@ jobs:
 - [ ] `npm run typecheck` 零错误（strict 模式）。
 - [ ] `npm run lint` 零 error。
 - [ ] 第 7 章全部用例通过（UT 22、CT 20、IT 9、E2E 9、A11Y 5、I18N 26，共 91 条）。
-- [ ] 单测覆盖率：`lib/` + `i18n/` ≥ 90% 分支，`components/` ≥ 80% 行覆盖。
+- [ ] 单测覆盖率：`../lib` + `i18n/` ≥ 90% 分支，`components/` ≥ 80% 行覆盖。
 
 **体验**
 - [ ] 375 / 768 / 1440 三档视口无横向滚动。
@@ -1610,7 +1610,7 @@ jobs:
 - [ ] CJK 与 Latin 字体栈、行高区分正确。
 
 **工程**
-- [ ] `config/site-data.json` 与 `config/locales/zh-CN.json` 一致。
+- [ ] `../config/site-data.json` 与 `config/locales/zh-CN.json` 一致。
 - [ ] `npm run check:i18n` 退出码 0。
 - [ ] CI 全绿。
 
@@ -1620,17 +1620,17 @@ jobs:
 
 ### 10.1 新增一个 Section（例如 `Pricing`）
 
-1. 在 `types/siteConfig.ts` 增加 `PricingConfig` 接口，挂到 `SiteConfig.pricing?`。
-2. 在 `schemas/siteConfigSchema.ts` 增加对应 Zod 对象（**必须** `.optional()`）。
+1. 在 `../types/siteConfig.ts` 增加 `PricingConfig` 接口，挂到 `SiteConfig.pricing?`。
+2. 在 `../schemas/siteConfigSchema.ts` 增加对应 Zod 对象（ **必须** `.optional()`）。
 3. 新建 `components/sections/Pricing.tsx`，props 为 `SiteConfig['pricing']` + `dict`，`undefined` 时返回 `null`。
 4. 在 `SectionKey` 联合类型中加入 `'pricing'`。
-5. 在 `app/[locale]/page.tsx` 的 Section 映射表中注册。
+5. 在 `../app/[locale]/page.tsx` 的 Section 映射表中注册。
 6. **在全部 locale 的 `config/locales/*.json` 中补齐该字段**（否则 I18N-003 失败）。
 7. 补测试：CT（渲染/缺省）+ IT（order 位置）+ E2E（锚点）+ I18N（三语言均渲染）。
 
 ### 10.2 新增一个语言（例如 `ko`）
 
-1. 在 `i18n/config.ts` 的 `locales` 数组加 `'ko'`，并在 `localeMeta` 加一项。
+1. 在 `../i18n/config.ts` 的 `locales` 数组加 `'ko'`，并在 `localeMeta` 加一项。
 2. 新增 `config/locales/ko.json`（复制 `zh-CN.json` 后翻译全部文案）。
 3. 新增 `messages/ko.json`（复制 `zh-CN.json` 后翻译全部 key）。
 4. 跑 `npm run validate` 与 `npm test` —— I18N-003 / I18N-004 会自动验证结构完整性。
@@ -1640,7 +1640,7 @@ jobs:
 
 ### 10.3 新增一个图标
 
-在 `lib/icons.ts` 的 `ICON_WHITELIST` 追加 Lucide 官方名称。未加入而直接在 JSON 中使用，开发环境会立即抛错（T5）。
+在 `../lib/icons.ts` 的 `ICON_WHITELIST` 追加 Lucide 官方名称。未加入而直接在 JSON 中使用，开发环境会立即抛错（T5）。
 
 ### 10.4 部署第二、第三个站点
 
@@ -1650,7 +1650,7 @@ cp config/locales/zh-CN.json config/site-b.json
 SITE_CONFIG_PATH=config/site-b.json npm run build
 ```
 
-或将 JSON 托管到 CMS / GitHub，`app/[locale]/page.tsx` 改为 `fetch(url, { next: { revalidate: 3600 } })` 实现 ISR 多租户。
+或将 JSON 托管到 CMS / GitHub，`../app/[locale]/page.tsx` 改为 `fetch(url, { next: { revalidate: 3600 } })` 实现 ISR 多租户。
 
 ---
 
@@ -1706,4 +1706,4 @@ UT → CT → IT → E2E → A11Y → I18N → 产物测试 → CI 全绿 → Do
 
 ---
 
-*本文件取代 `README.md` 与 `DESING.md` 中的实现细节描述；两份原文保留作为需求溯源。*
+*本文件取代 `../README.md` 与 `DESING.md` 中的实现细节描述；两份原文保留作为需求溯源。*
