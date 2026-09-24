@@ -280,7 +280,5 @@ cd current && nohup env PORT=3000 HOSTNAME=0.0.0.0 \
 ## 関連ドキュメント
 
 - デザイン参照：[awesome-design-md](https://github.com/voltagent/awesome-design-md) — 本プロジェクトのデザイン規約の出典
-- [`DEPLOY_GUIDE.md`](./DEPLOY_GUIDE.md) — 汎用デプロイガイド（GitHub Actions / 手動 / Docker Compose、Nginx、SSL）
 - [`SPEC.md`](./SPEC.md) — 要件と受入ケース（UT-/E2E- 番号）
-- [`DESING.md`](./DESING.md) — デザイン仕様とトークン体系
 - [`LICENSE`](./LICENSE)

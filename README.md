@@ -280,7 +280,5 @@ Logs: `/opt/znbsys-homepage/server.log`
 ## Related docs
 
 - Design reference: [awesome-design-md](https://github.com/voltagent/awesome-design-md) — source of the project's design conventions
-- [`DEPLOY_GUIDE.md`](./DEPLOY_GUIDE.md) — general deployment guide (GitHub Actions / manual / Docker Compose, Nginx, SSL)
 - [`SPEC.md`](./SPEC.md) — requirements & acceptance cases (UT-/E2E- IDs)
-- [`DESING.md`](./DESING.md) — design spec & token system
 - [`LICENSE`](./LICENSE)
