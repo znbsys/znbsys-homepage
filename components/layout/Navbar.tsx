@@ -9,7 +9,7 @@ import { cn } from '@/lib/cn';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { MobileMenu } from './MobileMenu';
 import type { Locale } from '@/i18n/config';
-import { withBase } from '@/lib/paths';
+import { withBase, resolveNavHref } from '@/lib/paths';
 
 export interface NavbarProps {
   brand: BrandConfig;
@@ -63,7 +63,7 @@ export function Navbar({ brand, data, dict, locale }: NavbarProps) {
           {data.links.map((link) => (
             <a
               key={link.href}
-              href={link.href}
+              href={resolveNavHref(link.href, locale)}
               className="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
               {link.label}
@@ -74,7 +74,7 @@ export function Navbar({ brand, data, dict, locale }: NavbarProps) {
 
           {data.ctaButton && (
             <a
-              href={data.ctaButton.href}
+              href={resolveNavHref(data.ctaButton.href, locale)}
               target={data.ctaButton.target}
               className="ml-3 px-5 py-2 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary/90 transition-colors shadow-sm shadow-primary/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >

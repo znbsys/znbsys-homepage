@@ -8,3 +8,9 @@ export function withBase(path: string): string {
   if (path === '/') return `${BASE_PATH}/`;
   return `${BASE_PATH}${path.startsWith('/') ? path : `/${path}`}`;
 }
+
+/** 导航链接：#锚点指向当前语言首页对应锚点（子页面也可用），站内路径加 basePath */
+export function resolveNavHref(href: string, locale: string): string {
+  if (href.startsWith('#')) return `${withBase(`/${locale}`)}${href}`;
+  return withBase(href);
+}

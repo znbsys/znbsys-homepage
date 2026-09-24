@@ -6,6 +6,7 @@ import type { Dictionary } from '@/i18n/t';
 import { cn } from '@/lib/cn';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import type { Locale } from '@/i18n/config';
+import { resolveNavHref } from '@/lib/paths';
 
 export interface MobileMenuProps {
   open: boolean;
@@ -44,7 +45,7 @@ export function MobileMenu({ open, onClose, links, ctaButton, dict, locale }: Mo
         {links.map((link) => (
           <a
             key={link.href}
-            href={link.href}
+            href={resolveNavHref(link.href, locale)}
             onClick={onClose}
             className="px-4 py-3 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           >
@@ -58,7 +59,7 @@ export function MobileMenu({ open, onClose, links, ctaButton, dict, locale }: Mo
 
         {ctaButton && (
           <a
-            href={ctaButton.href}
+            href={resolveNavHref(ctaButton.href, locale)}
             target={ctaButton.target}
             onClick={onClose}
             className="mt-4 block w-full text-center px-5 py-3 rounded-lg bg-primary text-white text-base font-semibold hover:bg-primary/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
